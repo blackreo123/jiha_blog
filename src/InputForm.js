@@ -4,7 +4,7 @@ import { blogActions } from "./store/reducers/blogData";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 export default function InputForm(){
-
+    
     const dispatch = useDispatch();
     const [testImg,setTestImg] = useState('');
     const [title, setTitle] = useState('');
@@ -43,8 +43,8 @@ export default function InputForm(){
     //등록
     const sendData = () => {
         let temp = contentsList
-        
-        let data = {title : title, content : content, img : testImg.previewURL}
+        // console.log(temp.length)
+        let data = {id : temp.length, title : title, content : content, img : testImg.previewURL, reply : []}
             temp = [...contentsList]
             temp.push(data)
             dispatch(blogActions.setContentsList(temp))

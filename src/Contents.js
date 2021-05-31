@@ -1,26 +1,34 @@
 import './contents.css'
-import React from 'react';
+
 import { useSelector } from 'react-redux';
+import Heart from './Heart';
+import InputReply from './InputReply';
 
 
 export default function Contents(){
     const {
         contentsList
     } = useSelector((state) => state.blog);
+
+    
     return(
         <>
         
-            {contentsList.map((item,index)=>{
+            {contentsList.map((item)=>{
                 return(
                     
-                    <div className="wrapper" key={index}>
+                    <div className="wrapper" key={item.id}>
                         <div className="title">{item.title}</div>
                         <div className="content">
-                            <img src={item.img} style={{width : '100%'}}></img>
+                            {item.img ? <img alt='이미지였던것' src={item.img} style={{width : '100%'}}></img> : null }
                             {item.content}
                         </div>
-                        <div className="item">like</div>
-                        <div className="item">inputReply</div>
+                        <div className="item">
+                            <Heart></Heart>
+                        </div>
+                        <div className="item">
+                            <InputReply id={item.id}></InputReply>
+                        </div>
                         <div className="item">replyList</div>
                     </div>
                     
