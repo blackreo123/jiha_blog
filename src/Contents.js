@@ -3,6 +3,7 @@ import './contents.css'
 import { useSelector } from 'react-redux';
 import Heart from './Heart';
 import InputReply from './InputReply';
+import ReplyList from './ReplyList';
 
 
 export default function Contents(){
@@ -29,7 +30,9 @@ export default function Contents(){
                         <div className="item">
                             <InputReply id={item.id}></InputReply>
                         </div>
-                        <div className="item">replyList</div>
+                        <div className="item reply">
+                            <ReplyList id={item.id}></ReplyList>
+                        </div>
                     </div>
                     
                 )

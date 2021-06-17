@@ -44,7 +44,7 @@ export default function InputForm(){
     const sendData = () => {
         let temp = contentsList
         // console.log(temp.length)
-        let data = {id : temp.length, title : title, content : content, img : testImg.previewURL, reply : []}
+        let data = {id : temp.length, title : title, content : content, img : testImg.previewURL}
             temp = [...contentsList]
             temp.push(data)
             dispatch(blogActions.setContentsList(temp))
