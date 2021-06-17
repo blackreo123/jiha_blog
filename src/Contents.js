@@ -24,7 +24,7 @@ export default function Contents(){
                             {item.img ? <img alt='이미지였던것' src={item.img} style={{width : '100%'}}></img> : null }
                             {item.content}
                         </div>
-                        <div className="item">
+                        <div className="heart">
                             <Heart></Heart>
                         </div>
                         <div className="item">
