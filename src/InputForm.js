@@ -17,7 +17,7 @@ export default function InputForm(){
     const history = useHistory();
 
     //이미지 업로드
-    const test = (e) => {
+    const 이미지미리보기 = (e) => {
         // console.log(e.target.files[0])
         e.preventDefault();
         let reader = new FileReader();
@@ -54,7 +54,7 @@ export default function InputForm(){
         
         <div className="inputForm-container">
             <div>제목 : <input type="text" onChange={inputTile}></input></div>
-            <div>사진 업로드 <input type="file" accept="image/*" onChange={test}></input></div>
+            <div>사진 업로드 <input type="file" accept="image/*" onChange={이미지미리보기}></input></div>
             <div>
                 <img alt='' src={testImg !== '' ? testImg.previewURL : null}></img>
             </div>

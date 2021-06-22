@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Heart from './Heart';
 import InputReply from './InputReply';
 import ReplyList from './ReplyList';
+import DeleteContent from './DeleteContent';
 
 
 export default function Contents(){
@@ -19,10 +20,16 @@ export default function Contents(){
                 return(
                     
                     <div className="wrapper" key={item.id}>
-                        <div className="title">{item.title}</div>
+                        <div className="title">
+                            {item.title}
+                            <DeleteContent id={item.id}></DeleteContent>
+                        </div>
                         <div className="content">
-                            {item.img ? <img alt='이미지였던것' src={item.img} style={{width : '100%'}}></img> : null }
-                            {item.content}
+                            {item.img ? <img alt='이미지였던것' src={item.img} style={{width : '100%', marginBottom : '5%'}}></img> : null }
+                            <pre>
+                                {item.content}
+                            </pre>
+                            
                         </div>
                         <div className="heart">
                             <Heart></Heart>
